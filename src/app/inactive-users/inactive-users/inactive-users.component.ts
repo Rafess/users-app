@@ -1,3 +1,4 @@
+import { CounterService } from './../../counter.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UsersService } from 'src/app/users.service';
 
@@ -7,10 +8,11 @@ import { UsersService } from 'src/app/users.service';
   styleUrls: ['./inactive-users.component.css']
 })
 export class InactiveUsersComponent {
- constructor(private usersService: UsersService) {}
+ constructor(private usersService: UsersService, private CounterService: CounterService) {}
  users = this.usersService.inactiveUsers;
  setToActive(id:number) { 
   this.usersService.setToActive(id);
 }
+
 }
 
